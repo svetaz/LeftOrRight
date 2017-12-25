@@ -14,10 +14,7 @@
             android:id="@+id/nav_donate"
             android:icon="@drawable/donate"
             android:title="Donate"/>
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/share"
-            android:title="Share"/>
+
         <item
             android:id="@+id/nav_feedback"
             android:icon="@drawable/feedback"

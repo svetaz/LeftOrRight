@@ -123,14 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             i.setData(Uri.parse(url));
             startActivity(i);
 
-        } else if (id == R.id.nav_share) {
-            Intent sendIntent = new Intent();
-            sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "Download LeftOrRight app from https://app.box.com/v/leftorright");
-            sendIntent.setType("text/plain");
-            startActivity(sendIntent);
-
-        } else if (id == R.id.nav_feedback) {
+        }  else if (id == R.id.nav_feedback) {
 
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse("mailto:" + "rollbarbullbar@gmail.com"));
