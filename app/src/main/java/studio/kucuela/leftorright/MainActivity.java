@@ -1,12 +1,15 @@
 package studio.kucuela.leftorright;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -37,8 +40,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(Color.BLACK);
+        toolbar.setTitleTextColor(Color.parseColor("#1bbaee"));
         setSupportActionBar(toolbar);
+
+
 
 
 
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.Black));
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.pljava));
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -143,21 +148,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView textr = (TextView)findViewById(R.id.textr);
         Technique.ROTATE.getComposer().duration(650).delay(0).playOn(textl);
 
-        MediaPlayer mp;
-        mp = MediaPlayer.create(MainActivity.this, R.raw.moon1);
-        mp.setVolume(0.75f,0);
-        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                // TODO Auto-generated method stub
-                mp.reset();
-                mp.release();
-                mp = null;
-            }
 
-        });
-        mp.start();
+        AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        audioManager.isWiredHeadsetOn();
+
+
+        if (audioManager.isWiredHeadsetOn()==true) {
+
+            MediaPlayer mp;
+            mp = MediaPlayer.create(MainActivity.this, R.raw.moon1);
+            mp.setVolume(0.75f, 0f);
+            mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    // TODO Auto-generated method stub
+                    mp.reset();
+                    mp.release();
+                    mp = null;
+                }
+
+            });
+            mp.start();
+
+        } else {
+
+            ConstraintLayout cl = (ConstraintLayout)findViewById(R.id.layout);
+            final Snackbar snackbar = Snackbar.make(cl,"Please connect your headphones and try again", Snackbar.LENGTH_SHORT);
+
+            // Set an action on it, and a handler
+            snackbar.setAction("OK", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    snackbar.dismiss();
+                }
+            });
+
+
+
+            snackbar.show();
+        }
+
 
 
 
@@ -170,21 +202,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView textr = (TextView)findViewById(R.id.textr);
         Technique.ROTATE.getComposer().duration(650).delay(0).playOn(textr);
 
-        MediaPlayer mp;
-        mp = MediaPlayer.create(MainActivity.this, R.raw.moon1);
-        mp.setVolume(0f,0.75f);
-        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        audioManager.isWiredHeadsetOn();
 
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                // TODO Auto-generated method stub
-                mp.reset();
-                mp.release();
-                mp = null;
-            }
 
-        });
-        mp.start();
+        if (audioManager.isWiredHeadsetOn()==true) {
+
+            MediaPlayer mp;
+            mp = MediaPlayer.create(MainActivity.this, R.raw.moon1);
+            mp.setVolume(0f, 0.75f);
+            mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    // TODO Auto-generated method stub
+                    mp.reset();
+                    mp.release();
+                    mp = null;
+                }
+
+            });
+            mp.start();
+
+        } else {
+
+            ConstraintLayout cl = (ConstraintLayout)findViewById(R.id.layout);
+            final Snackbar snackbar = Snackbar.make(cl,"Please connect your headphones and try again", Snackbar.LENGTH_SHORT);
+
+            // Set an action on it, and a handler
+            snackbar.setAction("OK", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    snackbar.dismiss();
+                }
+            });
+
+
+
+            snackbar.show();
+        }
 
     }
 
