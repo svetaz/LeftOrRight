@@ -4,4 +4,4 @@ A simple app for helping you out which earbud is left and which is right.
 
 APK: https://app.box.com/s/b6c7w5a6ipyogu840rxkw0bwlyhynvf0
 
-![Alt text](https://cdn.dribbble.com/users/108390/screenshots/1282843/earbuds-01.png)
+![Alt text](https://public.boxcloud.com/api/2.0/internal_files/259383956566/versions/273338125654/representations/jpg_paged_2048x2048/content/1.jpg?access_token=1!vKajRDmpMgNpL86pmO7hosUH8suevzS26u-wL_HRDfRcutS05cMCFKhpqxGguLD5Vi6xPoIEs_PIkX20ykOAnkUvbcJ1hh2iq4bu9sW6wtws_aKOe4yLpC_RHMqlzAOmGGlfGmBAcMsTau-zQlK5MViymUVjAAsEKA_s4YVe18GxdabedS9L4sqMvHNA6-liUkTCO6GuYwMSC3m5JSSNfhZ4LbOBNbRO4xZDePcgMNx7RDLB0RTREkzRtCxOdM3vWiGwx7yBD6h9uD4wozMBa4yI2OaAb65zZQAL4iakBRwRfOj7_RtY2nswWD7y4jg67APXlH9Z0-L-YU03nPIw3qNF_MYBrwoha_ICA99-tMqr5CQUZQjV4NuMnd8aW0hLBlaKPeWZzMTMPbhT&box_client_name=box-content-preview&box_client_version=1.23.1)
