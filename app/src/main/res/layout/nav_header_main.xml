@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="81dp"
+    android:layout_height="wrap_content"
     android:background="#FFFFFF"
     android:paddingTop="2dp"
     android:paddingBottom="8dp"
@@ -18,12 +18,27 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@mipmap/ic_launcher4"
+        android:drawableLeft="@mipmap/ic_launcher"
         android:textColor="#1bbaee"
 android:gravity="center_vertical"
         android:paddingLeft="5dp"
         android:textSize="20sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="25dp"
         android:text="LeftOrRight"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        android:text="LeftOrRight is a simple material design app that can help you determine which earbud is left and which one is right when you find yourself in a dark place.Just plugin your earbuds and click on the left/right channel on main screen.Icon provided by www.freepik.com.Animation library provided by com.jaredrummler:android-animations:1.0.0.If you find this app useful please rate it on Google Play/contribute the author."
+        android:paddingTop="5dp"
+        android:textAlignment="viewStart"
+        android:paddingLeft="5dp"
+
+
+        />
 
 </LinearLayout>

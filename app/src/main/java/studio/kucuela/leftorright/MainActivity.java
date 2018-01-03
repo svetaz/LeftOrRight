@@ -23,9 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
+
 import com.jrummyapps.android.animations.Technique;
 
 import org.w3c.dom.Text;
@@ -79,30 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_about) {
-
-            new MaterialStyledDialog.Builder(this)
-                    .setTitle("About")
-                    .setDescription("A simple app made to help you with using your earbuds in the dark")
-                    .setHeaderDrawable(R.drawable.sluske).withDialogAnimation(true)
-
-                    .setPositiveText("OK").onPositive(new MaterialDialog.SingleButtonCallback() {
-
-                @Override
-                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-
-                    dialog.dismiss();
-                }
-            })
-
-
-
-
-                    .show();
-
-
-
-        } else if (id == R.id.nav_donate) {
+        if (id == R.id.nav_donate) {
             String url = "https://paypal.me/svetaz";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
